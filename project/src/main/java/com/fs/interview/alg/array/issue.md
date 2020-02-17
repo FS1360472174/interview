@@ -41,7 +41,30 @@ for (int i = 0; i < nums.length; i++) {
 移动左指针时，左指针的下一个数可能重复
 移动右指针时，右指针的下个树可能重复
 
-作者：FS1360472174
-链接：https://leetcode-cn.com/problems/3sum/solution/shu-zu-de-nge-shu-zhi-he-jie-ti-si-lu-by-fs1360472/
-来源：力扣（LeetCode）
-著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
+合并4个数思路转换为合并3个数解法。
+
+注意点:
+只适应于正数
+```
+ // 排序后第一个数最小，不能大于sum = 0
+            if (target > 0 && nums[i] > target) {
+                return res;
+            }
+```
+
+另外第一次提交只击败了15%，把一些边界条件加上，就能击败63%
+
+```
+  if (i+3 < nums.length) {
+                int min1 = nums[i] + nums[i + 1] + nums[i + 2] + nums[i + 3];
+                if (min1 > target) {
+                    break;
+                }
+                int max1 = nums[i] + nums[length - 1] + nums[length - 2] + nums[length - 3];
+                if (max1 < target) {
+                    continue;
+                }
+            }
+
+```
+如果在 threeSum在加上，时间应该会更快
