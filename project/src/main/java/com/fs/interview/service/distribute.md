@@ -34,6 +34,8 @@ Raft 算法属于 Multi-Paxos 算法
 
 Raft是通过以leader为准，实现一系列值的共识和各节点日志的一致。
 
+zab协议
+
 # 参考
 https://juejin.im/post/5cb00706e51d456e3428c0c9
 
