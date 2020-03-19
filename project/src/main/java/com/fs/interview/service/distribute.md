@@ -18,7 +18,7 @@ Accept阶段
 阶段的返回结果来调整的
 
 
-#multi-paxos
+# multi-paxos
 主要是通过leader来省略掉prepare阶段，
 
 
@@ -34,7 +34,9 @@ Raft 算法属于 Multi-Paxos 算法
 
 Raft是通过以leader为准，实现一系列值的共识和各节点日志的一致。
 
-zab协议
+# zab协议
+Zookeeper Atomic Broadcast,Zookeeper 原子广播协议。master-slave集群架构模式下，保证各个节点之间的数据一致性
+在multi-paxos基础上，实现了数据的最终一致性。因为multi-paxos并不保证数据的顺序，只保证提交达成共识。
 
 # 参考
 https://juejin.im/post/5cb00706e51d456e3428c0c9
