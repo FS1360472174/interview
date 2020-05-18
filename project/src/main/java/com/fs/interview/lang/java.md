@@ -31,6 +31,16 @@ jdk1.8
 # 线程相关
 
 ## 线程间的通信方式
+volatile, sync,
+
+wait,notify
+
+threadlocal
+
+Thread.join
+
+## 线程状态
+NEW RUNNABLE BLOCK WAIT TIME_WAIT TERM
 
 
 # 锁相关
