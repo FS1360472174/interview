@@ -15,7 +15,7 @@ public class Palindrome {
         String str2 = "madam";
         String str3 = "ac";
         String str4 = "cbbd";
-        String str5= "babad";
+        String str5 = "babad";
         System.out.println(isPalindrome(str1));
         System.out.println(isPalindrome(str2));
         System.out.println(longestPalindrome(str2));
@@ -34,9 +34,9 @@ public class Palindrome {
      * @return
      */
     public static boolean isPalindrome(String str) {
-        int length  = str.length();
-        int right = 0 ;
-        int left = length-1;
+        int length = str.length();
+        int right = 0;
+        int left = length - 1;
         while (right < left) {
             if (str.charAt(right) != str.charAt(left)) {
                 return false;
@@ -55,18 +55,18 @@ public class Palindrome {
      */
     public static String longestPalindrome(String s) {
         int length = s.length();
-       if (length < 2) {
-           return s;
-       }
-       String res = s.substring(0,1);
-       for (int i = 0; i < length -1; i++) {
-           for (int j = i+1; j< length  ; j++) {
-               if (isPalindrome(s.substring(i,j+1))) {
-                  res = j+1-i > res.length() ? s.substring(i,j+1) : res;
-               }
-           }
-       }
-       return res;
+        if (length < 2) {
+            return s;
+        }
+        String res = s.substring(0, 1);
+        for (int i = 0; i < length - 1; i++) {
+            for (int j = i + 1; j < length; j++) {
+                if (isPalindrome(s.substring(i, j + 1))) {
+                    res = j + 1 - i > res.length() ? s.substring(i, j + 1) : res;
+                }
+            }
+        }
+        return res;
     }
 
     /**
@@ -87,11 +87,11 @@ public class Palindrome {
             dp[i][i] = true;
         }
 
-        int start =0 ;
-        int maxLen =1;
+        int start = 0;
+        int maxLen = 1;
         for (int j = 1; j < length; j++) {
-            for (int i = 0; i < j; i++)  {
-                if (s.charAt(i) == s.charAt(j) && (dp[i + 1][j - 1] || j-i<2)) {
+            for (int i = 0; i < j; i++) {
+                if (s.charAt(i) == s.charAt(j) && (dp[i + 1][j - 1] || j - i < 2)) {
                     dp[i][j] = true;
                 }
                 // 只要 dp[i][j] == true 成立，就表示子串 s[i, j] 是回文，此时记录回文长度和起始位置

@@ -7,7 +7,6 @@
 package com.fs.interview.alg.array;
 
 
-
 import javax.sound.midi.SysexMessage;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -23,10 +22,10 @@ public class ArraySum {
     public static void main(String[] args) {
         int[] nums = new int[]{ -1, 0, 1, 2, -1, -4 };
         //System.out.print(threeSum(nums));
-       int[] nums2 = new int[] {1, 0, -1, 0, -2, 2};
-       //System.out.println(fourSum(nums2, 0));
-       int [] nums3 = new int[] {1,-2,-5,-4,-3,3,3,5};
-       System.out.println(fourSum(nums3, -11));
+        int[] nums2 = new int[]{ 1, 0, -1, 0, -2, 2 };
+        //System.out.println(fourSum(nums2, 0));
+        int[] nums3 = new int[]{ 1, -2, -5, -4, -3, 3, 3, 5 };
+        System.out.println(fourSum(nums3, -11));
     }
 
     public static List<List<Integer>> threeSum(int[] nums) {
@@ -48,11 +47,11 @@ public class ArraySum {
         // 先排序
         Arrays.sort(nums);
         int length = nums.length;
-        for (int i = 0;i< nums.length; i++) {
+        for (int i = 0; i < nums.length; i++) {
             if (i > 0 && nums[i] == nums[i - 1]) {
                 continue;
             }
-            if (i+3 < nums.length) {
+            if (i + 3 < nums.length) {
                 int min1 = nums[i] + nums[i + 1] + nums[i + 2] + nums[i + 3];
                 if (min1 > target) {
                     break;
@@ -62,11 +61,11 @@ public class ArraySum {
                     continue;
                 }
             }
-            int[] other = Arrays.copyOfRange(nums, i+1, nums.length);
+            int[] other = Arrays.copyOfRange(nums, i + 1, nums.length);
             List<List<Integer>> three = threeSumTarget(other,
                     target - nums[i],
                     false);
-            if (three.size() >0 ) {
+            if (three.size() > 0) {
                 for (int j = 0; j < three.size(); j++) {
                     List<Integer> valid = new ArrayList<>();
                     valid.add(nums[i]);
@@ -77,7 +76,8 @@ public class ArraySum {
         }
         return result;
     }
-    public static List<List<Integer>> threeSumTarget(int [] nums, int target, boolean sort) {
+
+    public static List<List<Integer>> threeSumTarget(int[] nums, int target, boolean sort) {
         List<List<Integer>> res = new ArrayList<>();
         // 保卫代码
         if (nums == null || nums.length < 3) {

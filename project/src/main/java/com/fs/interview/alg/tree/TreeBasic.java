@@ -24,6 +24,7 @@ public class TreeBasic {
         System.out.println(isValidBST2(treeNode));
 
     }
+
     /**
      * 最大深度
      * 树的深度就是求Max(左子树深度，右子树深度) +1，
@@ -38,7 +39,7 @@ public class TreeBasic {
 
         int left = maxDepth(root.left);
         int right = maxDepth(root.right);
-        return left < right ? right + 1: left+1;
+        return left < right ? right + 1 : left + 1;
     }
 
     public static boolean isValidBST2(TreeNode root) {
@@ -49,6 +50,7 @@ public class TreeBasic {
         boolean right = isValidBST2(root.right);
         return left && right;
     }
+
     /**
      * 是否是二叉搜索树
      * @param root
@@ -67,6 +69,7 @@ public class TreeBasic {
         }
         return true;
     }
+
     public static void inOrder(TreeNode root, List<Integer> values) {
         if (root == null) {
             return;

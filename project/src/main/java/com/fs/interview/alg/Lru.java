@@ -23,19 +23,21 @@ import java.util.Map;
  */
 public class Lru {
     public static void main(String[] a) {
-        LRUCache1<String,Integer> lru = new LRUCache1<>(3);
+        LRUCache1<String, Integer> lru = new LRUCache1<>(3);
 
     }
 
-    private static class LRUCache2<K,V> {
+    private static class LRUCache2<K, V> {
         private int size;
-        private final Map<K,Node> value;
+        private final Map<K, Node> value;
         private Node head;
         private Node tail;
+
         public LRUCache2(int init) {
             value = new HashMap<>();
             this.size = init;
         }
+
         public LRUCache2.Node getEntry(K key) {
             if (!value.containsKey(key)) {
                 return null;
@@ -45,7 +47,7 @@ public class Lru {
             return node;
         }
 
-        public void putEntry(K key,V v) {
+        public void putEntry(K key, V v) {
             // 已经存在
             if (value.containsKey(key)) {
                 // 更新值
@@ -102,10 +104,12 @@ public class Lru {
                 tail = head;
             }
         }
-         class Node {
+
+        class Node {
             K key;
             V value;
             Node pre, next;
+
             Node(K key, V value) {
                 this.key = key;
                 this.value = value;
@@ -114,9 +118,11 @@ public class Lru {
             }
         }
     }
-    private static class LRUCache1<K,V> {
+
+    private static class LRUCache1<K, V> {
         private int size;
-        private final Map<K,V> value;
+        private final Map<K, V> value;
+
         public LRUCache1(int init) {
             value = new LinkedHashMap<>(init, 0.75f, true);
             this.size = init;

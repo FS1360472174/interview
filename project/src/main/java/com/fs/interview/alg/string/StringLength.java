@@ -36,13 +36,13 @@ public class StringLength {
         int point = 0;
         Set<Character> set = new HashSet();
         Set<Character> tmp = new HashSet<>();
-        for (int i =0 ;i <s.length(); i++) {
+        for (int i = 0; i < s.length(); i++) {
             if (set.size() >= s.length() - i) {
                 return set.size();
             }
             tmp.add(s.charAt(i));
-            point = i+1;
-            while (point < s.length()){
+            point = i + 1;
+            while (point < s.length()) {
                 if (!tmp.contains(s.charAt(point))) {
                     tmp.add(s.charAt(point));
                     point++;
@@ -70,13 +70,13 @@ public class StringLength {
         int point = 0;
         int max = 0;
         Set<Character> tmp = new HashSet<>();
-        for (int i =0 ;i <s.length(); i++) {
+        for (int i = 0; i < s.length(); i++) {
             if (max >= s.length() - i) {
                 return max;
             }
             tmp.add(s.charAt(i));
-            point = i+1;
-            while (point < s.length()){
+            point = i + 1;
+            while (point < s.length()) {
                 if (!tmp.contains(s.charAt(point))) {
                     tmp.add(s.charAt(point));
                     point++;
@@ -105,10 +105,10 @@ public class StringLength {
         int i = 0;
         Set<Character> tmp = new HashSet<>();
         int length = s.length();
-        while(i < length && point < length) {
+        while (i < length && point < length) {
             if (!tmp.contains(s.charAt(point))) {
                 tmp.contains(s.charAt(point++));
-                max = Math.max(max, point -i);
+                max = Math.max(max, point - i);
             } else {
                 tmp.remove(s.charAt(i++));
             }

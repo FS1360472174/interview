@@ -25,16 +25,16 @@ public class RemoveUselessStr {
      * @param s
      * @return
      */
-    public static  String minRemoveToMakeValid(String s) {
-        StringBuffer sb =  new StringBuffer();
+    public static String minRemoveToMakeValid(String s) {
+        StringBuffer sb = new StringBuffer();
         Stack<Integer> stack = new Stack();
         // 标记每一位是否有效
         int[] valid = new int[s.length()];
-        for (int i = 0; i< s.length(); i++) {
+        for (int i = 0; i < s.length(); i++) {
             char v = s.charAt(i);
             if (v == '(') {
                 stack.push(i);
-                valid [i] = 0;
+                valid[i] = 0;
             } else if (v == ')') {
                 if (!stack.empty()) {
                     valid[stack.pop()] = 1;
@@ -46,7 +46,7 @@ public class RemoveUselessStr {
                 valid[i] = 1;
             }
         }
-        for (int i = 0; i< s.length() ; i++) {
+        for (int i = 0; i < s.length(); i++) {
             if (valid[i] == 1) {
                 sb.append(s.charAt(i));
             }

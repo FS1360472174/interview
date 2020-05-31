@@ -29,8 +29,3 @@ build/
 
 ### VS Code ###
 .vscode/
-/out
-### mvn
-.mvn
-/mvnw
-.cmd

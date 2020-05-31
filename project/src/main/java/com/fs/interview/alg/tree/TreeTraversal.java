@@ -5,6 +5,7 @@
  */
 
 package com.fs.interview.alg.tree;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.LinkedList;
@@ -20,7 +21,7 @@ public class TreeTraversal {
         if (root == null) {
             return new ArrayList<>();
         }
-        List<Integer>  result = new ArrayList<>();
+        List<Integer> result = new ArrayList<>();
         inorderTraversal(root, result);
         return result;
     }
